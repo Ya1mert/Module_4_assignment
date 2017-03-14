@@ -1,3 +1,14 @@
-<h2>Categories List</h2>
+<div class="">
+  <h2>Categories List</h2>
+  <ul>
+    <li ng-repeat="item in $ctrl.result">
+      Short name is: <b> {{item.short_name}} </b>. It is <b>{{item.name}}</b>
+      <button ng-click="$ctrl.showItems($index)"></button>
+    </li>
+  </ul>
 
-<ui-view></ui-view>
+  <menu-items></menu-items>
+
+  <ui-view></ui-view>
+
+</div>
