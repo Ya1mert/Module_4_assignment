@@ -6,15 +6,29 @@
   </head>
   <body ng-app="MenuApp">
 
-    <ui-view></ui-view>
+    <div ng-controller='MainController as ctrl'>
+
+      <h1>Welcome to our restaurant</h1>
+      <button type="button" name="button" ng-click = "ctrl.click()">Get items</button>
+      <ui-view></ui-view>
+
+    </div>
+
 
     <!-- libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="/angular-ui-router.js"></script>
 
     <!-- modules -->
+    <script src="menuapp.module.js"></script>
+    <script src="menudata.module.js"></script>
+
+    <!--artifacts-->
+    <script src="main.controller.js"></script>
+    <script src="menudata.service.js"></script>
 
     <!-- routes -->
+    <script src="routes.js"></script>
 
   </body>
 </html>

@@ -14,8 +14,10 @@
         url: 'https://davids-restaurant.herokuapp.com/categories.json'
       }).then(function (result) {
         return result.data;
-      })
-    }
+        console.log(result.data);
+      });
+      return promise;
+    };
 
   }
 })()
