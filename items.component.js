@@ -5,7 +5,7 @@
    .component('menuItems', {
      templateUrl: '/templates/items.component.template.html',
      bindings: {
-       shortList: '<',
+       items: '<',
        name: '<'
      }
    });

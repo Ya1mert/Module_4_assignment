@@ -21,23 +21,28 @@
         resolve: {
           categories: ['MenuDataService', function (service) {
             // debugger;
-            return service.getAllCategories();
+            return service.getAllCategories().then(function (response) {
+              return response.data;
+            });
 
           }]
         }
       })
-      .state('categoriesList.items',{
+      .state('items',{
+        url: '/items/{itemId}',
         templateUrl: '/templates/items.html',
         controller: 'ItemsController as iCtrl',
-        params: {
-          itemId: null
+        resolve: {
+          itemData: ['$stateParams', 'MenuDataService', function (params,service) {
+            // debugger;
+            return service.getItemsForCategory(params.itemId).then(function (r) {
+              // console.log(r.data);
+              return r.data;
+            })
+          }]
         }
-        // resolve: {
-        //   items: ['MenuDataService','categories', function (service, categories) {
-        //
-        //
-        //
-        //   }]
+        // params: {
+        //   itemId: null
         // }
       })
    };

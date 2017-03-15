@@ -4,26 +4,15 @@
 
   .controller('ItemsController', itemsController);
 
-  itemsController.$inject=['MenuDataService','categories','$stateParams']
+  itemsController.$inject=['MenuDataService','itemData']
 
-  function itemsController(service, categories, $stateParams) {
+  function itemsController(service, itemData) {
     var iCtrl = this;
-    var menu_items = [];
-    var name = '';
+        
+    iCtrl.shortList = itemData.menu_items;
+    iCtrl.name = itemData.category.name;
 
-    var item = categories[$stateParams.itemId];
-    service.getItemsForCategory(item.short_name).then(function (result) {
-      return menu_items = result.data.menu_items;
-      console.log("inside promise, menu_items are:",menu_items);
-      console.log("inside promise, name are:",name);
-    });
-
-
-
-
-    iCtrl.shortList = menu_items;
-    // iCtrl.name = name;
-    console.log('this is shortList: ', iCtrl.shortList);
+    // console.log('this is shortList: ', iCtrl.shortList);
 
 
 
