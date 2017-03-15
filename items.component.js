@@ -3,7 +3,7 @@
   // debugger;
   angular.module('data')
    .component('menuItems', {
-     templateUrl: './templates/items.component.template.html',
+     templateUrl: 'templates/items.component.template.html',
      bindings: {
        items: '<',
        name: '<'
