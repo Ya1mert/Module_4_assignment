@@ -1,0 +1,20 @@
+<div class="">
+  <h4> Category name is {{$ctrl.name}} </h4>
+
+  <ul>
+
+    <li ng-repeat="item in $ctrl.items">
+
+      Name of item: {{item.name}}</br>
+      Item description: {{item.description}}</br>
+      Item cost (large if available): {{item.price_large}}
+      Item cost (small if available): {{item.price_small}}
+
+      <!-- Short name is: <b> {{item.short_name}} </b>. It is <b>{{item.name}}</b> -->
+
+    </li>
+  </ul>
+
+
+
+</div>
